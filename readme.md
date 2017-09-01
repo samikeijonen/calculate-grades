@@ -10,4 +10,4 @@ Demo and live example can be found in Pohjois-Tapiola highschool [Calculate grad
 
 ## Screenshot
 
-![Calculate grades table](https://pohjois-tapiola.com/lukio/wp-content/uploads/2017/09/arvosanalaskuri.jpg)
+![Calculate grades table](https://pohjois-tapiola.com/lukio/wp-content/uploads/2017/09/arvosanalaskuri-screenshot.jpg)
