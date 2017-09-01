@@ -1,8 +1,12 @@
 # Calculate grades
 
-Calculate grades is a small form and script combination.
+Calculate grades is a small form and script combination. It calculates grade based on maximum and minimum (lowest grade) points.
 
-It calculates grade based on maximum and minimum () points.
+You can also insert student exam points.
+
+## Demo and live example
+
+Demo and live example can be found in Pohjois-Tapiola highschool [Calculate grade page](https://pohjois-tapiola.com/lukio/arvosanalaskuri/) (in Finnish).
 
 ## Screenshot
 
