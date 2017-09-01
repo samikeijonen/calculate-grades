@@ -17,7 +17,7 @@
  * @package   CalculateGrades
  * @version   1.0.0
  * @author    Sami Keijonen <sami.keijonen@foxnet.fi>
- * @copyright Copyright (c) 2012-2017, Justin Tadlock
+ * @copyright Copyright (c) 2017, Sami Keijonen
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-1.0.html
  */
 
