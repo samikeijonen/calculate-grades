@@ -152,6 +152,7 @@ final class Plugin {
 			'caption' => esc_html__( 'Calculated grades', 'calculate-grades' ),
 			'points'  => esc_html__( 'Points', 'calculate-grades' ),
 			'grade'   => esc_html__( 'Grade', 'calculate-grades' ),
+			'arrow'   => '<svg class="icon icon-arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11c0 .266-.11.516-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.11-.703-.297l-7-7C.11 11.516 0 11.265 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"/></svg>',
 		) );
 	}
 }

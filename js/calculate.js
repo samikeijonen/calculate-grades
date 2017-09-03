@@ -12,9 +12,10 @@
 	}
 
 	// Get result div and default info from form.
-	const showResults  = document.getElementById('show-results');
-	const UsualPoints  = Array.from(gradeForm.querySelectorAll('[name="usual-max-points"]'));
-	const numberInputs = Array.from(gradeForm.querySelectorAll('input[type="number"]'));
+	const showResults      = document.getElementById('show-results');
+	const showResultsTable = document.getElementById('show-results-table');
+	const UsualPoints      = Array.from(gradeForm.querySelectorAll('[name="usual-max-points"]'));
+	const numberInputs     = Array.from(gradeForm.querySelectorAll('input[type="number"]'));
 
 	// Calculate grade by given points.
 	function calculateGrade(max, min, points) {
@@ -26,16 +27,43 @@
 
 	// Populate grades in table format.
 	function populateResults(max, min, i, points) {
-		let resultText = '<table>';
-		resultText += '<caption class="screen-reader-text">' + CalculateGradesText.caption + '</caption>';
-		resultText += '<tr><th scope="col">' + CalculateGradesText.points + '</th><th scope="col">' + CalculateGradesText.grade + '</th></tr>';
-		let currentClass = 'results';
+		// Add grades to array. We can sort and use template strings after that.
+		let grades = [];
 		for(i; i >= min; i--) {
-			i == points && points ? currentClass = 'results results-match' : currentClass = 'results';
-			resultText += '<tr class="' + currentClass + '"><td>' + i + '</td><td>' + parseFloat(calculateGrade(max, min, i)) + '</td></tr>';
+			grades[i] = {
+				point: i,
+				result: parseFloat(calculateGrade(max, min, i)),
+			};
 		}
-		resultText += '</table>';
-		showResults.innerHTML = resultText;
+
+		// Reverse the order at first.
+		grades.reverse();
+
+		// Get our populated table.
+		let resultTable = populateTable(grades, points);
+
+		// Populate results inside our div.
+		showResults.innerHTML = resultTable;
+	}
+
+	// Use template string to populate table.
+	// @link http://wesbos.com/template-strings-html/
+	function populateTable(grades, points) {
+		return resultTable = `
+			<table>
+				<caption class="screen-reader-text">${CalculateGradesText.caption}</caption>
+				<tr>
+					<th scope="col">${CalculateGradesText.points}</th>
+					<th scope="col">${CalculateGradesText.grade}</th>
+				</tr>
+				${grades.map(grade => `
+				<tr class="${grade.point == points && points ? 'results results-match' : 'results'}">
+					<td>${grade.point}</td>
+					<td>${grade.result}</td>
+				</tr>
+				`).join('')}
+			</table>
+			`.trim();
 	}
 
 	// Calculate grade via form input.
@@ -59,8 +87,8 @@
 		const UsualMinValue = parseInt( e.target.getAttribute('data-min-points') );
 
 		// Put these values in the form.
-		const MaxPoints  = parseInt( document.querySelector('[name="max-points"]').value = UsualMaxValue );
-		const MinPoints  = parseInt( document.querySelector('[name="min-points"]').value = UsualMinValue );
+		const MaxPoints = parseInt( document.querySelector('[name="max-points"]').value = UsualMaxValue );
+		const MinPoints = parseInt( document.querySelector('[name="min-points"]').value = UsualMinValue );
 
 		// Get exam points (not mandatory).
 		const ExamPoints = parseInt( gradeForm.querySelector('[name="exam-points"]').value );
