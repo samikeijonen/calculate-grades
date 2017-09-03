@@ -13,7 +13,6 @@
 
 	// Get result div and default info from form.
 	const showResults      = document.getElementById('show-results');
-	const showResultsTable = document.getElementById('show-results-table');
 	const UsualPoints      = Array.from(gradeForm.querySelectorAll('[name="usual-max-points"]'));
 	const numberInputs     = Array.from(gradeForm.querySelectorAll('input[type="number"]'));
 
