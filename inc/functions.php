@@ -5,10 +5,12 @@
  * @package CalculateGrades
  */
 
+namespace Calculate_Grades;
+
 /**
  * Calculate grade form.
  */
-function calculate_grades_form() { ?>
+function form() { ?>
 	<form class="calculate-grades" id="calculate-grades">
 		<fieldset>
 			<legend><?php esc_html_e( 'Common grade combinations', 'calculate-grades' ); ?></legend>
