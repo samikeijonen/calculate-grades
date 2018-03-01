@@ -89,7 +89,7 @@ final class Plugin {
 	private function setup() {
 		// Main plugin directory path and URI.
 		$this->dir = trailingslashit( plugin_dir_path( __FILE__ ) );
-		$this->uri = trailingslashit( plugin_dir_url(  __FILE__ ) );
+		$this->uri = trailingslashit( plugin_dir_url( __FILE__ ) );
 	}
 
 	/**

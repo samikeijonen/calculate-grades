@@ -2,8 +2,12 @@
 /**
  * Functions and shortcodes.
  *
+ * @package CalculateGrades
  */
 
+/**
+ * Calculate grade form.
+ */
 function calculate_grades_form() { ?>
 	<form class="calculate-grades" id="calculate-grades">
 		<fieldset>
